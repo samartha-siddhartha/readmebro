@@ -155,3 +155,7 @@ def generate(llm, model):
         except Exception as e:
             spinner.fail("💥")
             click.echo(f"[ReadMeBro] Documentation generation failed: {e}")
+
+def main():
+    """Main entry point for console_scripts."""
+    cli()
