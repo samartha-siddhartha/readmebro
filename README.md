@@ -27,7 +27,7 @@ pip install readmebro
 Or install directly from source:
 
 ```bash
-git clone https://github.com/<your-username>/readmebro.git
+git clone https://github.com/samartha-siddhartha/readmebro.git
 cd readmebro
 pip install -e .
 ```
