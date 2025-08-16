@@ -37,7 +37,7 @@ pip install -e .
 ## ⚡ Quick Start
 
 ```python
-from readmebro import readmebro
+from readmebro.decorator import readmebro
 
 @readmebro
 def add_numbers(a, b):
