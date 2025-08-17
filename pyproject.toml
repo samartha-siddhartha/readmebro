@@ -7,7 +7,7 @@ name = "readmebro"
 version = "1.0.0"
 description = "AI-powered and AI-optional Python documentation generator"
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Samartha Siddhartha", email = "samartha.siddhartha@gmail.com" }
 ]
 readme = "README.md"
 license = { text = "MIT" }
