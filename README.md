@@ -14,6 +14,7 @@ You can use it **with AI** (via Ollama + CodeLlama) or **without AI** for a plai
   - **Without AI** → Generate standard documentation with `readmebro generate`
   - **With AI** → Use `readmebro generate --llm ollama --model codellama:7b` for rich, contextual docs
 - **JSON Registry** → Store raw scan data in `documentation/raw/`.
+- **Function Graph** → Auto-generate a visual map of how functions connect.
 - **Minimal Setup** → Works out of the box with or without AI.
 
 ---
@@ -82,6 +83,9 @@ Then run:
 readmebro generate --llm ollama --model codellama:7b
 ```
 
+> ⚠️ Note: ReadMeBro uses the **local Ollama HTTP API** via `requests` (default: `http://localhost:11434`).
+> No external servers are contacted unless *you* configure Ollama otherwise.
+
 ---
 
 ## 📂 Output Structure
@@ -92,7 +96,22 @@ documentation/
     readmebro_registry.json   # Captured code metadata
     readmebro_usage.json      # Usage mapping
     README_GENERATED.md       # Generated documentation
-    function_graph.md         # Mapping of classes and functions
+    function_graph.md         # Mermaid function graph
+    function_graph.html       # Interactive graph (pyvis)
+```
+
+---
+
+## 🔗 Workflow Overview
+
+```mermaid
+graph TD
+    A[Run your Python code] --> B[readmebro scan]
+    B --> C[Usage & registry JSON]
+    C --> D[readmebro generate]
+    D --> E[README_GENERATED.md]
+    D --> F[Function Graphs]
+    F --> G[Mermaid + PyVis visualizations]
 ```
 
 ---
@@ -116,8 +135,6 @@ readmebro scan
 readmebro generate
 readmebro generate --llm ollama --model codellama:7b
 ```
-
-
 
 ---
 

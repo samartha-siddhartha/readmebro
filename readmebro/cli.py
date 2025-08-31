@@ -12,10 +12,6 @@ USAGE_FILE = RAW_DOCS_DIR / "readmebro_usage.json"
 
 EXCLUDE_DIRS = {"venv", ".git", "documentation", "__pycache__"}
 
-# llm_providers.py
-import requests
-import os
-
 def query_ollama(model, prompt):
     try:
         resp = requests.post(
